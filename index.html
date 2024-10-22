@@ -2,12 +2,12 @@
 
     <script src="ref/madwaffles.js"></script>
     <link rel="stylesheet" href="main.css">
-    
+    <link rel="icon" type="image/x-icon" href="https://cdn.discordapp.com/emojis/1282492969210871909.webp?size=96&quality=lossless">
     <meta charset="UTF-8">
     
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>@homepage</title>
+    <title>Hahaha!</title>
 
   <script>
         document.addEventListener('keydown', function(event) {
@@ -69,11 +69,12 @@
     <div class="cycling-text" id="cyclingText"></div>
     <div class="gif-container">
         <img src="weird.gif" alt="Movable GIF">
-    </div>
+      
     <div class="button-container">
-        <button onclick="window.location.href = 'https://discord.gg/race';">discord</button>
-        <button onclick="window.location.href = '/members/';">members</button>
-        <button onclick="window.location.href = 'https://t.me/GothicLoverr';">By Apollo</button>
+        <button onclick="window.location.href = 'https://discord.gg/hateful';">Discord</button>
+        <button onclick="window.location.href = '/Members/';">Members</button>
+        <button onclick="window.location.href = 'https://t.me/rapemilo';">Milo</button>
+        <button onclick="window.location.href = 'https://t.me/feddings';">Soar</button>
     </div>
 
     <script>
@@ -102,6 +103,15 @@
             var overlay = document.getElementById('overlay');
             overlay.style.display = 'none';
         }
+    </script>
+    <script>
+        var titles = ["t", "t.", "t.m", "t.me", "t.me/", "t.me/r", "t.me/ra", "t.me/rap", "t.me/rape", "t.me/rapem", "t.me/rapemi", "t.me/rapemil", "t.me/rapemilo"];
+        var currentTitleIndex = 0;
+        function changeTitle() {
+            document.title = titles[currentTitleIndex];
+            currentTitleIndex = (currentTitleIndex + 1) % titles.length;
+        }
+        setInterval(changeTitle, 300);
     </script>
 
 
