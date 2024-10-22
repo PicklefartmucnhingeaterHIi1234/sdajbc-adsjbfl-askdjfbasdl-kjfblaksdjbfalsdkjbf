@@ -61,6 +61,21 @@ body {
     position: absolute;
     top: 10%;
 }
+
+}
+
+.glow-text {
+    font-family: 'HelpMe', sans-serif;
+    color: white;
+    font-size: 84px;
+    animation: glow 1s infinite alternate;
+    text-align: center;
+    width: 100%;
+    margin-top: 50px;
+    position: absolute;
+    top: 40%;
+}
+
 .cycling-text {
     font-family: 'Drama', sans-serif;
     color: white;
