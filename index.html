@@ -1,0 +1,123 @@
+<html>
+
+<head>
+  <meta content="Private Biolink" property="og:title">
+  <meta content property="og:description">
+  <meta content="images/jxmo7ny67x771.gif" property="og:image">
+  <meta content="#df0704" data-react-helmet="true" name="theme-color">
+
+  <meta content="Milo" property="og:title">
+  <meta content property="og:description">
+  <meta content="images/jxmo7ny67x771.gif" property="og:image">
+  <meta content="#000000" data-react-helmet="true" name="theme-color">
+
+  <link rel="icon" type="image/x-icon" href="https://cdn.discordapp.com/emojis/1222998528557584444.webp?size=96&quality=lossless">
+  <title>Eslut.ing</title>
+  <link rel="stylesheet" href="css/main.css">
+  <script protect src="js/protect.js"></script>
+  <script src="js/script.js"></script>
+  <script src="./anti-inspect-element.js"></script>
+  <script src="js/funny.js"></script>
+</head>
+
+<body>
+  <div class="overlay" id="overlay">
+    <div class="proceed-button" onclick="removeOverlay(); playMusic()">𒉭</div>
+    </div>
+
+    <style>
+      @font-face {
+        font-family: 'Help Me';
+        src: url('fonts/HelpMe.ttf') format('truetype');
+      }
+
+      @font-face {
+        font-family: 'Cityburn';
+        src: url('fonts/cityburn.ttf') format('truetype');
+      }
+
+      @font-face {
+        font-family: 'artifact';
+        src: url('fonts/artifact.ttf') format('truetype');
+      }
+    </style>
+
+    <div class="container">
+      <h1>Eslut.ing</h1>
+      <p>Private Biolink</p>
+    </div><noscript>You must enable JavaScript to see this text.</noscript>
+    <div id="clock"></div>
+    <script>
+      function removeOverlay() {
+        var overlay = document.getElementById("overlay");
+        overlay.style.display = "none";
+      }
+
+      function updateClock() {
+        const now = new Date();
+        const options = {
+          hour12: true,
+          hour: 'numeric',
+          minute: '2-digit',
+          second: '2-digit'
+        };
+        const formattedTime = now.toLocaleTimeString('en-US', options);
+        document.getElementById('clock').textContent = formattedTime;
+      }
+
+      setInterval(updateClock, 1000);
+
+      function createBloodSparks() {
+        const numSparks = Math.floor(Math.random() * 5) + 1;
+        for (let i = 0; i < numSparks; i++) {
+          const bloodSpark = document.createElement('div');
+          bloodSpark.classList.add('blood-spark');
+          bloodSpark.style.left = `${Math.random() * window.innerWidth}px`;
+          document.body.appendChild(bloodSpark);
+
+          setTimeout(() => {
+            bloodSpark.remove();
+          }, 6000);
+        }
+      }
+
+      setInterval(createBloodSparks, 1000);
+    </script>
+    <script>
+      function playMusic() {
+        var audio = new Audio('slurslol.mp3');
+        audio.play();
+      }
+    </script>
+
+    <div class="snowflakes fade-in">
+      <div class="snowflake">⸸</div>
+      <div class="snowflake">†</div>
+      <div class="snowflake">⸸</div>
+      <div class="snowflake">†</div>
+      <div class="snowflake">⸸</div>
+      <div class="snowflake">†</div>
+      <div class="snowflake">⸸</div>
+      <div class="snowflake">†</div>
+      <div class="snowflake">⸸</div>
+      <div class="snowflake">†</div>
+      <div class="snowflake">⸸</div>
+    </div>
+
+    <div class="blood-spark" style="left: 1003.77px;"></div>
+    <div class="blood-spark" style="left: 1861.42px;"></div>
+    <div class="blood-spark" style="left: 1011.6px;"></div>
+    <div class="blood-spark" style="left: 1878.73px;"></div>
+    <div class="blood-spark" style="left: 601.029px;"></div>
+    <script>
+        var titles = ["@", "@E", "@ES", "@ESL", "@ESLU", "@ESLUT", "@ESLUTS", "@ESLUTS", "@ESLUTS", "@ESLUTS", "@ESLUT", "@ESLU", "@ESL", "@ES", "@E", "@"];
+        var currentTitleIndex = 0;
+        function changeTitle() {
+            document.title = titles[currentTitleIndex];
+            currentTitleIndex = (currentTitleIndex + 1) % titles.length;
+        }
+        setInterval(changeTitle, 300);
+    </script>
+</body>
+
+</html>
