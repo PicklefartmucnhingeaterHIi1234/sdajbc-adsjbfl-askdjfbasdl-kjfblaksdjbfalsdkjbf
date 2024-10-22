@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script language="javascript">document.write(unescape('%20%20%20%20%3C%73%63%72%69%70%74%20%64%69%73%61%62%6C%65%2D%64%65%76%74%6F%6F%6C%2D%61%75%74%6F%20%73%72%63%3D%27%68%74%74%70%73%3A%2F%2F%63%64%6E%2E%6A%73%64%65%6C%69%76%72%2E%6E%65%74%2F%6E%70%6D%2F%64%69%73%61%62%6C%65%2D%64%65%76%74%6F%6F%6C%40%6C%61%74%65%73%74%27%3E%3C%2F%73%63%72%69%70%74%3E%0A%20%20%20%20%3C%6C%69%6E%6B%20%72%65%6C%3D%22%73%74%79%6C%65%73%68%65%65%74%22%20%68%72%65%66%3D%22%6D%61%69%6E%2E%63%73%73%22%3E'))</script>
+<script src="../ref/madwaffles.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>@members</title>
+<link href="https://fonts.cdnfonts.com/css/vcr-osd-mono" rel="stylesheet">
+<style>
+* {
+  cursor: url(https://cur.cursors-4u.net/others/oth-8/oth702.cur), auto !important;
+}
+
+body {
+  background-color: black;
+  color: white;
+  font-family: 'VCR OSD Mono', 'Comic Sans MS', 'Comic Sans', cursive;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+  user-select: none;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+.proceed-button {
+    background-color: transparent;
+    border: none;
+    font-size: 30px;
+    color: rgb(255, 255, 255);
+    position: fixed;
+}
+
+.proceed-button:hover {
+    text-decoration: underline;
+    color: rgb(255, 0, 0);
+    cursor: url(https://cur.cursors-4u.net/others/oth-8/oth704.cur), auto !important;
+}
+
+.section, .title, .members, .member button {
+  text-shadow: 0 0 5px white;
+}
+
+.section {
+  width: 100%;
+  text-align: center;
+  margin: 10px 0;
+}
+
+.title {
+  border-top: 2px solid rgba(255, 255, 255, 0);
+  border-bottom: 2px solid rgba(255, 255, 255, 0);
+  padding: 5px 0;
+  font-family: 'VCR OSD Mono', 'Comic Sans MS', 'Comic Sans', cursive;
+}
+
+.members {
+  margin-top: 10px;
+}
+
+.member {
+  margin: 5px 0;
+}
+
+.member button {
+  background-color: black;
+  font-family: 'VCR OSD Mono', 'Comic Sans MS', 'Comic Sans', cursive;
+  color: white;
+  border: 2px solid rgba(255, 255, 255, 0);
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.member button:hover {
+  background-color: rgba(255, 0, 0, 0);
+  color: rgb(255, 0, 0);
+  cursor: url(https://cur.cursors-4u.net/others/oth-8/oth704.cur), auto !important;
+  text-shadow: 0 0 5px rgb(255, 0, 0);
+}
+
+pre {
+  margin-top: -200px;
+  margin-left: -20px;
+}
+</style>
+</head>
+<body>
+    <div class="overlay" id="overlay">
+        <div class="proceed-button" onclick="removeOverlay(), playaudio()">click me >,<</div>
+    </div>
+<pre>
+                                .       .
+                 _.-'\          |\-"""-/|          /`-._
+             _.-`     `.       /         \       ,'     '-._
+          _.'           `._   ;   \   /   ;   _,'           `._
+        .'                 `-.:           :.-'                 `.
+      ,`                           , ,                           '.
+    ,`                                                             '.
+   /                                                                 \
+  :,-"""-,                                                     ,-"""-,:
+  '       `                                                   '       '
+          :                                                   :
+          : ,-"""-,                                   ,-"""-, :
+           '       `.       _.-'         '-._       .'       '
+                     \    .`    :       :    '.    /
+                      . .`       :     :       '. .
+                      :/          :   :          \:
+                      :            : :            :
+                                    :
+</pre>
+  <div class="section title">The Ghouls</div>
+  <div class="section members">
+    <div class="member">
+      <a href="../m/"><button>/user/@madara/</button></a>
+    </div>
+    <div class="member">
+      <a href="../e/"><button>/user/@elusive/</button></a>
+    </div>
+    <div class="member">
+      <a href="../2am/"><button>/user/@2am/</button></a>
+    </div>
+    <div class="member">
+        <a href="../hazel/"><button>/user/@hazel/</button></a>
+      </div>
+      <div class="member">
+        <a href="../lucious/"><button>/user/@lucious/</button></a>
+      </div>
+      <div class="member">
+        <a href="../fernroad/"><button>/user/@kimi/</button></a>
+      </div>
+  </div>
+
+  <script>
+    function playaudio() {
+        var audio = new Audio('../ref/home.mp3');
+        audio.volume = 0.3;
+        audio.play();
+    }
+</script>
+
+<script>
+function removeOverlay() {
+    var overlay = document.getElementById('overlay');
+    overlay.style.display = 'none';
+}
+</script>
+</body>
+</html>
