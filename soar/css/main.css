@@ -1,4 +1,8 @@
 @font-face {
+    font-family: 'youmurdererbb';
+    src: url('../fonts/youmurdererbb_reg.ttf') format('truetype');
+}
+@font-face {
     font-family: 'Help Me';
     src: url('../fonts/HelpMe_1.ttf') format('truetype');
 }
@@ -9,6 +13,7 @@
 @font-face {
     font-family: 'artifact';
     src: url('../fonts/artifact_1.ttf') format('truetype');
+
 }
 body {
     font-family: 'Help Me', sans-serif;
