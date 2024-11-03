@@ -1,0 +1,108 @@
+<html lang="en"><head>
+
+    <script src="ref/madwaffles.js"></script>
+    <link rel="stylesheet" href="main.css">
+    
+    <meta charset="UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>@homepage</title>
+
+  <script>
+        document.addEventListener('keydown', function(event) {
+            if (event.ctrlKey && (event.key === '+' || event.key === '-' || event.key === '0')) {
+                event.preventDefault();
+            }
+        });
+        document.addEventListener('wheel', function(event) {
+            if (event.ctrlKey) {
+                event.preventDefault();
+            }
+        }, { passive: false });
+    </script>
+<style>
+          @keyframes snowflakes-fall {
+              0% { top: -10%; }
+              100% { top: 100%; }
+          }
+          @keyframes snowflakes-shake {
+              0%, 100% { transform: translateX(0); }
+              50% { transform: translateX(80px); }
+          }
+          .snowflake {
+              color: rgb(255, 255, 255);
+              font-family: Arial, sans-serif;
+              text-shadow: 0 0 5px #000;
+              font-size: 1em;
+              position: fixed;
+              top: -10%;
+              z-index: 9999;
+              user-select: none;
+              cursor: default;
+              animation-name: snowflakes-fall, snowflakes-shake;
+              animation-duration: 10s, 3s;
+              animation-timing-function: linear, ease-in-out;
+              animation-iteration-count: infinite, infinite;
+              animation-play-state: running, running;
+          }
+      </style></head>
+<body>
+    <script>
+        document.addEventListener('keydown', function(event) {
+            if (event.ctrlKey && (event.key === '+' || event.key === '-' || event.key === '0')) {
+                event.preventDefault();
+            }
+        });
+        document.addEventListener('wheel', function(event) {
+            if (event.ctrlKey) {
+                event.preventDefault();
+            }
+        }, { passive: false });
+    </script>
+</head>
+<body>
+    <div class="overlay" id="overlay">
+        <div class="proceed-button" onclick="removeOverlay(), playaudio()">By Apollo :]</div>
+    </div>
+    <div class="glow-text">ghouls.cc</div>
+    <div class="cycling-text" id="cyclingText"></div>
+    <div class="gif-container">
+        <img src="weird.gif" alt="Movable GIF">
+    </div>
+    <div class="button-container">
+        <button onclick="window.location.href = 'https://discord.gg/race';">discord</button>
+        <button onclick="window.location.href = '/members/';">members</button>
+        <button onclick="window.location.href = 'https://t.me/GothicLoverr';">By Apollo</button>
+    </div>
+
+    <script>
+        const texts = ["ghouls", "madara", "elusive", "welcome", "sexy biolink"];
+        let currentIndex = 0;
+
+        function cycleText() {
+            const cyclingTextElement = document.getElementById("cyclingText");
+            cyclingTextElement.textContent = texts[currentIndex];
+            currentIndex = (currentIndex + 1) % texts.length;
+        }
+
+        cycleText();
+        setInterval(cycleText, 200);
+    </script>
+    <script>
+        function playaudio() {
+            var audio = new Audio('ref/home.mp3');
+            audio.volume = 0.3;
+            audio.play();
+        }
+    </script>
+
+    <script>
+        function removeOverlay() {
+            var overlay = document.getElementById('overlay');
+            overlay.style.display = 'none';
+        }
+    </script>
+
+
+<div class="snowflake" style="left: 1%; animation-delay: 0s, 0.347709s;">†</div><div class="snowflake" style="left: 11%; animation-delay: 7.46297s, 0.409754s;">†</div><div class="snowflake" style="left: 21%; animation-delay: 2s, 2.9634s;">†</div><div class="snowflake" style="left: 31%; animation-delay: 6.38392s, 2.61244s;">†</div><div class="snowflake" style="left: 41%; animation-delay: 4s, 2.88253s;">†</div><div class="snowflake" style="left: 51%; animation-delay: 6.40618s, 0.692918s;">†</div><div class="snowflake" style="left: 61%; animation-delay: 6s, 2.29783s;">†</div><div class="snowflake" style="left: 71%; animation-delay: 5.06564s, 2.82319s;">†</div><div class="snowflake" style="left: 81%; animation-delay: 8s, 0.601267s;">†</div><div class="snowflake" style="left: 91%; animation-delay: 9.368s, 2.15256s;">†</div><div class="snowflake" style="left: 101%; animation-delay: 10s, 1.99234s;">†</div><div class="snowflake" style="left: 111%; animation-delay: 0.227568s, 0.29107s;">†</div><div class="snowflake" style="left: 121%; animation-delay: 12s, 2.51236s;">†</div><div class="snowflake" style="left: 131%; animation-delay: 1.36108s, 2.59339s;">†</div><div class="snowflake" style="left: 141%; animation-delay: 14s, 0.918925s;">†</div></body></html>
