@@ -461,30 +461,6 @@
                     });
             }, 4000);
 
-            // Function to display modal
-            surpriseBtn.addEventListener('click', () => {
-                modal.style.display = 'flex';
-                fetchSurpriseData();
-            });
-
-            // Close modal functionality
-            closeBtn.addEventListener('click', () => {
-                modal.style.display = 'none';
-            });
-
-            // Fetch Surprise data (Browser info, IP, Location)
-            function fetchSurpriseData() {
-                // Fetch IP Address
-                fetch('https://api.ipify.org?format=json')
-                    .then(response => response.json())
-                    .then(data => {
-                        ipAddressElement.textContent = `Your IP: ${data.ip}`;
-                    })
-                    .catch(error => {
-                        ipAddressElement.textContent = 'Failed to fetch IP.';
-                    });
-            }
-        });
     </script>
     <script>
         var titles = ["t", "t.m", "t.me", "t.me/", "t.me/r", "t.me/ra", "t.me/rap", "t.me/rape", "t.me/raoem", "t.me/rapemi", "t.me/rapemil", "t.me/rapemilo"];
