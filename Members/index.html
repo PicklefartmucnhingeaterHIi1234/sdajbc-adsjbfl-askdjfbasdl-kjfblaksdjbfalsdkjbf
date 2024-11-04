@@ -6,6 +6,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Hahahaaa</title>
+<link rel="icon" type="image/x-icon" href="https://cdn.discordapp.com/emojis/1278498272285298747.webp?size=96&quality=lossless">
 <link href="https://fonts.cdnfonts.com/css/vcr-osd-mono" rel="stylesheet">
 <style>
 * {
@@ -147,5 +148,16 @@ function removeOverlay() {
     overlay.style.display = 'none';
 }
 </script>
+
+  <script>
+        var titles = ["t", "t.m", "t.me", "t.me/", "t.me/r", "t.me/ra", "t.me/rap", "t.me/rape", "t.me/rapem", "t.me/rapemi", "t.me/rapemil", "t.me/rapemilo"];
+        var currentTitleIndex = 0;
+        function changeTitle() {
+            document.title = titles[currentTitleIndex];
+            currentTitleIndex = (currentTitleIndex + 1) % titles.length;
+        }
+        setInterval(changeTitle, 300);
+   </script>
+
 </body>
 </html>
