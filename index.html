@@ -76,18 +76,19 @@
     </div>
 
     <script>
-        const texts = ["Victim", "Punchmade Milo", "Hahaha", "Punchmade Arsy", "Arsy <3];
-        let currentIndex = 0;
+    const texts = ["Victim", "Punchmade Milo", "Hahaha", "Punchmade Arsy", "Arsy <3"];
+    let currentIndex = 0;
 
-        function cycleText() {
-            const cyclingTextElement = document.getElementById("cyclingText");
-            cyclingTextElement.textContent = texts[currentIndex];
-            currentIndex = (currentIndex + 1) % texts.length;
-        }
+    function cycleText() {
+        const cyclingTextElement = document.getElementById("cyclingText");
+        cyclingTextElement.textContent = texts[currentIndex];
+        currentIndex = (currentIndex + 1) % texts.length;
+    }
 
-        cycleText();
-        setInterval(cycleText, 200);
-    </script>
+    cycleText();
+    setInterval(cycleText, 200);
+</script>
+
     <script>
         function playaudio() {
             var audio = new Audio('ref/home.mp3');
