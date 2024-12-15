@@ -3,26 +3,26 @@ var textarea = $('.term');
 var i = 0;
 var count = 0;
 
-var start = 'milo.lol'
+var start = 'victim.wtf'
 var data = [
-  './milo.lol',
+  './victim.wtf',
   'milo',
   '********',
   'Yes\n',
-  'milo',
-  'milo',
-  'milo',
-  'milo@meowb.in\n\n',
+  'meeeeoowwwwwwwww',
+  'ihatemilo',
+  'fwm',
+  'milo@vicitm.wtf\n\n',
 ]
 
 var info = [
-  "Please state the user you would like to add > milo",
-  "Please set the password for 'milo123' > X$u50sF2#?$p>z*<->1?",
-  "Shall we create a home directory for 'milo' > yes ",
-  "Directory Created, time for your socials!\n\nPlease state your Telegram username, if none put N/A > meeeeoowwwwwwwww ",
-  "Please state your Discord username, if none put 'N/A' > ihatemilo ",
-  "Please state your Doxbin username, if none put 'N/A' > fwm ",
-  "Please state your Email, if none put 'N/A' > milo@victim.wtf ",
+  "Please state the user you would like to add > ",
+  "Please set the password for 'milo123' > ",
+  "Shall we create a home directory for 'milo' >  ",
+  "Directory Created, time for your socials!\n\nPlease state your Telegram username, if none put N/A >",
+  "Please state your Discord username, if none put 'N/A' >  ",
+  "Please state your Doxbin username, if none put 'N/A' >  ",
+  "Please state your Email, if none put 'N/A' >  ",
 ];
 
 runner(start)
