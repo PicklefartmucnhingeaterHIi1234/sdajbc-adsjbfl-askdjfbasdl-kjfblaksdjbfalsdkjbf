@@ -3,26 +3,26 @@ var textarea = $('.term');
 var i = 0;
 var count = 0;
 
-var start = 'enact.lol'
+var start = 'milo.lol'
 var data = [
-  './enact.lol',
-  'enact',
+  './milo.lol',
+  'milo',
   '********',
   'Yes\n',
-  'enact',
-  'enact',
-  'enact',
-  'enact@meowb.in\n\n',
+  'milo',
+  'milo',
+  'milo',
+  'milo@meowb.in\n\n',
 ]
 
 var info = [
-  "Please state the user you would like to add > ",
-  "Please set the password for 'enact123' > ",
-  "Shall we create a home directory for 'enact' > ",
-  "Directory Created, time for your socials!\n\nPlease state your Telegram username, if none put 'N/A' > ",
-  "Please state your Discord username, if none put 'N/A' > ",
-  "Please state your Doxbin username, if none put 'N/A' > ",
-  "Please state your Email, if none put 'N/A' > ",
+  "Please state the user you would like to add > milo",
+  "Please set the password for 'milo123' > X$u50sF2#?$p>z*<->1?",
+  "Shall we create a home directory for 'milo' > yes ",
+  "Directory Created, time for your socials!\n\nPlease state your Telegram username, if none put N/A > meeeeoowwwwwwwww ",
+  "Please state your Discord username, if none put 'N/A' > ihatemilo ",
+  "Please state your Doxbin username, if none put 'N/A' > fwm ",
+  "Please state your Email, if none put 'N/A' > milo@victim.wtf ",
 ];
 
 runner(start)
@@ -83,13 +83,13 @@ function feedbacker() {
 
 var output = [
   "\nInformation complete! Initializing database.",
-  "debug: Creating user account 'enact'",
+  "debug: Creating user account 'milo'",
   "debug: Setting user account password",
-  "debug: Creating user home directory, /home/enact",
-  "debug: Granting sudo privileges to user 'enact'",
-  "debug: Setting telegram account name 'EN1CT'",
-  "debug: Setting Discord username 'en1ct'",
-  "debug: Setting Doxbin username 'enact'",
-  "debug: Setting email address 'enact@meowb.in'",
+  "debug: Creating user home directory, /home/milo",
+  "debug: Granting sudo privileges to user 'milo'",
+  "debug: Setting telegram account name 'meeeeoowwwwwwwww'",
+  "debug: Setting Discord username 'ihatemilo'",
+  "debug: Setting Doxbin username 'fwm'",
+  "debug: Setting email address 'milo@victim.wtf'",
   "debug: Account initialized!"
 ];
