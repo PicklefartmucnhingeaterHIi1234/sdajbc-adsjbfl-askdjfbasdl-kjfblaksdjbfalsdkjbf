@@ -10,11 +10,13 @@
 * {
   cursor: url(https://cur.cursors-4u.net/others/oth-8/oth702.cur), auto !important;
 }
+
 @font-face {
     font-family: 'minecraft';
     src: url('fonts/Minercraftory.ttf') format('truetype');
+}
 
-  body {
+body {
   background-color: black;
   color: white;
   display: flex;
@@ -103,7 +105,7 @@ pre {
 </head>
 <body>
     <div class="overlay" id="overlay">
-        <div class="proceed-button" onclick="removeOverlay(), playaudio()">click Here !!!</div>
+        <div class="proceed-button" onclick="removeOverlay(); playaudio();">click Here !!!</div>
     </div>
 
   <div class="section title">victim.wtf</div>
