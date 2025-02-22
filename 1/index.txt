@@ -234,4 +234,5 @@ setTyped(true, ["666SWISH Enjoyer","0_0","real thug shit",": D", cdn_size])
       </div>
     </div>
 
-</body></html>
+</body>
+</html>
