@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>IP Logger</title>
+</head>
+<body>
+  <h1>Welcome</h1>
+  <p>Your IP is being logged (demo).</p>
+
+  <script>
+    // Step 1: Get IP from ipify
+    fetch("https://api.ipify.org?format=json")
+      .then(res => res.json())
+      .then(data => {
+        const ip = data.ip;
+
+        // Step 2: Send to Discord webhook (⚠️ Only for testing, not secure!)
+        fetch("https://discord.com/api/webhooks/1359699275289723004/bmW4msaaNzAon3B-JBJ44O0y6JHHyJh5hUtL4Cnre6BIuHYz14CHR9hs8sHvnzh93xs3", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({
+            content: `New visitor IP: \`${ip}\``
+          })
+        });
+      });
+  </script>
+</body>
+</html>
