@@ -17,19 +17,6 @@ document.addEventListener("DOMContentLoaded", function () {
             videoSrc: "assets/bg/s1.mp4",
             duration: 78
         },
-
-        {
-            title: "3",
-            audioSrc: "assets/audio/s3.mp3",
-            videoSrc: "assets/bg/s3.mp4",
-            duration: 225
-        },
-        {
-            title: "2",
-            audioSrc: "assets/audio/s2.mp3",
-            videoSrc: "assets/bg/s2.mp4",
-            duration: 76
-        }
     ];
 
     var currentIndex = 0;
