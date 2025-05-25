@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>error !</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=0.7" />
+
+
+	<link rel="apple-touch-icon" sizes="180x180" href="/res/icons/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/res/icons/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/res/icons/favicon-16x16.png">
+	<link rel="manifest" href="/res/icons/manifest.json">
+	<link rel="mask-icon" href="/res/icons/safari-pinned-tab.svg" color="#000000">
+	<link rel="shortcut icon" href="/res/icons/favicon.ico">
+	<meta name="apple-mobile-web-app-title" content="TSUKI">
+	<meta name="application-name" content="TSUKI">
+	<meta name="msapplication-config" content="/res/icons/browserconfig.xml">
+	<meta name="theme-color" content="#000000">
+
+
+	<link rel="stylesheet" href="/res/css/reset.css">
+	<link rel="stylesheet" href="/res/css/common.css">
+	<link rel="stylesheet" href="/res/css/cursor.css">
+	<link rel="stylesheet" href="/res/css/scanlines.css">
+
+
+	<script src="/res/js/jquery.min.js"></script>
+	<script src="/res/js/howler.min.js"></script>
+	<script src="/res/js/cookies.js"></script>
+	<script src="/res/js/sfx-main.js"></script>
+
+
+	<meta property="og:title" content="Sachi.lol" />
+	<meta property="og:description" content="File not found" />
+	<meta property="og:image" content="https://r2.interrupted.me/uploads/01j9ern6wc96x5191t1jmb32gk.gif" />
+
+
+	<style>
+		body {
+			background-image: url(/res/img/bg/404.jpg);
+			background-size: cover;
+			background-position: bottom;
+		}
+
+		#overlay {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			z-index: 5;
+			background-image: url(/res/img/bg/404-overlay.png);
+			background-size: cover;
+			background-position: bottom;
+			pointer-events: none;
+		}
+
+		#twinkling_stars {
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background: #000 url(/res/img/stars.png) repeat top center;
+			z-index: 0;
+			mix-blend-mode: lighten;
+			backface-visibility: hidden;
+			pointer-events: none;
+		}
+
+		#twinkling_stars::after {
+			content: "";
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background: transparent url(/res/img/twinkling.png) repeat top center;
+			z-index: 1;
+			animation: 200s move-twink-back linear infinite;
+			mix-blend-mode: darken;
+			backface-visibility: hidden;
+			pointer-events: none;
+		}
+
+		@keyframes move-twink-back {
+			from { background-position: 0 0; }
+			to { background-position: -10000px 5000px; }
+		}
+
+		.no-anim #twinkling_stars {
+			display: none;
+		}
+
+		#content {
+			color: #EEF;
+			text-shadow: 0px 0px 16px #fff;
+			opacity: 0.8;
+			mix-blend-mode: lighten;
+			width: 40em;
+			max-width: calc(100% - 2em);
+			padding-left: 5vw;
+			padding-top: 5vw;
+			position: relative;
+			z-index: 1000;
+		}
+
+		#content h1 {
+			font-family: "Heading", sans-serif;
+			font-size: 5em;
+			letter-spacing: 0.1em;
+		}
+
+		#secondary {
+			opacity: 0.5;
+			margin-top: 0.5em;
+		}
+
+		#logo {
+			position: fixed;
+			right: 5vw;
+			top: 5vw;
+			z-index: 100;
+			mix-blend-mode: lighten;
+			width: 7vw;
+			opacity: 0.8;
+		}
+
+		body:before, body:after {
+			content: "";
+			position: fixed;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			pointer-events: none;
+			z-index: 1000;
+			background-repeat: repeat;
+			background-position: 0px 0px;
+			animation-name: Static;
+			animation-timing-function: steps(4);
+		}
+
+		body:before {
+			background-image: url(/res/img/overlay.png);
+			animation-duration: 2s;
+			box-shadow: inset 0 0 10em rgba(0,0,0,0.4);
+		}
+
+		body:after {
+			background-image: url(/res/img/overlay2.png);
+			animation-duration: 0.8s;
+		}
+
+		@keyframes Static {
+			0% { background-position: 0px 0px; }
+			100% { background-position: 0px 4px; }
+		}
+	</style>
+
+	<script>
+		$(document).ready(function () {
+			music_volume = 1;
+			sfx_volume = 1;
+			setSfxVolume(1);
+			if (getCookie("pref-MUSVOL") !== "0") {
+				playMusic(1, "404");
+			}
+			if (getCookie("pref-ANIM") === "none") {
+				$("html").addClass("no-anim no-scanlines");
+			}
+		});
+	</script>
+</head>
+<body>
+	<div id="twinkling_stars"></div>
+	<div id="overlay"></div>
+
+	<div id="content">
+		<h1>Not Found</h1>
+		<p>The file you have requested does not currently exist. Maybe you mistyped a URL, or the file was moved?</p>
+	</div>
+	<img id="logo" src="https://r2.interrupted.me/uploads/01j9ern6wc96x5191t1jmb32gk.gif" />
+</body>
+</html>
