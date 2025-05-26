@@ -1,0 +1,199 @@
+@font-face {
+    font-family: 'Terminal';
+    src: url('../fonts/FreeSerif-YO4a.woff') format('woff');
+}
+
+:root {
+    --primary: #ffffff;
+    --secondary: #666666;
+    --warning: #ff3300;
+    --text: #ffffff;
+    --glow: rgba(255, 255, 255, 0.5);
+    --background: #000000;
+}
+
+body {
+    background-color: var(--background);
+    color: var(--text);
+    font-family: 'Terminal', monospace;
+    margin: 0;
+    padding: 20px;
+    overflow: hidden;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.boot-sequence {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Terminal !important;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 40px;
+    animation: fadeIn 1s forwards;
+}
+
+.logo {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.logo img {
+    max-width: 300px;
+    height: auto;
+}
+
+.version {
+    color: var(--text);
+    font-size: 0.9em;
+    opacity: 0.8;
+}
+
+.system-info {
+    color: var(--text);
+    font-size: 0.85em;
+    margin-top: 10px;
+    font-family: monospace;
+    letter-spacing: 1px;
+    opacity: 0.7;
+}
+
+.boot-log {
+    font-size: 1em;
+    line-height: 1.5;
+    opacity: 0;
+    animation: fadeIn 0.5s forwards;
+    padding-left: 10px;
+    border-left: 2px solid var(--primary);
+    margin: 5px 0;
+    text-shadow: 0 0 5px var(--glow);
+    font-family: 'Terminal', monospace !important;
+}
+
+.boot-log.success::before {
+    content: "[OK] ";
+    color: var(--primary);
+    font-weight: bold;
+}
+
+.boot-log.warning::before {
+    content: "[!!] ";
+    color: var(--warning);
+    text-shadow: 0 0 5px rgba(255, 51, 0, 0.5);
+}
+
+.boot-log.info::before {
+    content: "[--] ";
+    color: var(--text);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.memory-check {
+    margin: 20px 0;
+    font-family: monospace;
+    animation: fadeIn 1s forwards;
+    animation-delay: 2s;
+}
+
+.memory-block {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    margin: 1px;
+    background: var(--secondary);
+    animation: memoryTest 0.15s ease-in-out forwards;
+    opacity: 0;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+@keyframes memoryTest {
+    0% { 
+        background: #ff0000; 
+        opacity: 1;
+        box-shadow: 0 0 3px #ff0000;
+    }
+    50% { 
+        background: #ff9999;
+        opacity: 0.9;
+        box-shadow: 0 0 4px #ff9999;
+    }
+    100% { 
+        background: #ffffff;
+        opacity: 0.8;
+        box-shadow: 0 0 5px #ffffff;
+    }
+}
+
+.progress {
+    width: 100%;
+    height: 2px;
+    background: var(--secondary);
+    margin: 30px 0;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.progress-bar {
+    width: 0%;
+    height: 100%;
+    background: var(--primary);
+    box-shadow: 0 0 20px var(--glow);
+    animation: progress 4s linear forwards;
+}
+
+@keyframes progress {
+    from { width: 0%; }
+    to { width: 100%; }
+}
+
+.status {
+    text-align: center;
+    color: var(--primary);
+    font-size: 1.2em;
+    margin-top: 20px;
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+    animation-delay: 4s;
+    text-shadow: 0 0 10px var(--glow);
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.scanline {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.15);
+    opacity: 0.5;
+    animation: scanline 0.8s linear;
+    animation-delay: 3.8s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes scanline {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(100vh); opacity: 0; }
+}
+
+.click-prompt {
+    text-align: center;
+    color: var(--primary);
+    font-size: 1em;
+    margin-top: 15px;
+    opacity: 0;
+    animation: fadeIn 0.5s forwards;
+    animation-delay: 4.5s;
+    text-shadow: 0 0 10px var(--glow);
+}
