@@ -1,0 +1,1057 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>k</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+
+      @keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+        body {
+            background-color: #000000;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden; 
+            opacity: 0; 
+            animation: fadeIn 1.5s ease-in-out forwards; 
+            animation-delay: 0.5s; 
+        }
+
+        #background-video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1; 
+              animation: none; 
+  opacity: 1;
+        }
+
+        .wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .tilt-box {
+            width: 400px;
+            height: 200px;
+            background-color: rgba(255, 255, 255, 0);
+            border-radius: 20px;
+            padding: 20px;
+            text-align: center;
+            border: 0.1px solid rgb(255, 255, 255);
+            box-shadow: 0 4px 15px rgb(0, 0, 0);
+            backdrop-filter: blur(5px);
+             animation-delay: 1s; 
+        }
+
+        .profile-image {
+            position: relative;
+            top: -65px;
+            width: 91.5px;
+            right: -150px;
+            margin-bottom: 10px;
+            display: flex;
+            border-radius: 100px;
+            justify-content: center;
+        }
+
+        .profile-image img {
+            width: 90px;
+            height: 90px;
+            margin-left: 8px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 1px solid rgb(255, 255, 255);
+            box-shadow: 0 4px 15px rgba(255, 255, 255, 0.103);
+        }
+
+        .name {
+            font-size: 1.2em;
+            font-weight: bold;
+            margin: 10px 0;
+            color: #ffffff;
+            margin-top: -60px;
+        }
+
+        .badges {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .badge {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            overflow: visible;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .badge img {
+            width: 60%;
+            height: 60%;
+            object-fit: cover;
+        }
+
+        .tooltip {
+            position: absolute;
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(59, 59, 59, 0.7);
+            color: rgb(255, 255, 255);
+            padding: 3px 8px;
+            font-size: 13px;
+            border-radius: 5px;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s;
+            z-index: 1;
+            white-space: nowrap;
+        }
+
+        .badge:hover .tooltip {
+            opacity: 1;
+        }
+
+        .icons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 60px;
+        }
+
+        .icon-discord img {
+            width: 30px;
+            height: 30px;
+            object-fit: contain;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .icon-telegram img {
+            width: 25px;
+            height: 25px;
+            object-fit: contain;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .icon-star img {
+            width: 25px;
+            height: 25px;
+            object-fit: contain;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .icons a:hover img {
+            transform: scale(1.2) rotate(360deg);
+            transition: transform 0.6s ease;
+        }
+
+        .bio {
+            font-size: 1em;
+            color: #ffffff;
+            margin-top: 20px;
+            line-height: 1.4;
+            text-shadow: 0 4px 10px rgb(0, 0, 0);
+        }
+
+        .audio-controls {
+            margin-top: 130px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .audio-btn {
+            background-color: rgba(0, 0, 0, 0);
+            border: none;
+            padding: 4px;
+            border-radius: 10px;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgb(0, 0, 0);
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .audio-btn img {
+            width: 40px;
+            height: 35px;
+        }
+
+        .audio-btn:hover {
+            background-color: rgba(109, 109, 109, 0.473);
+            transform: scale(1.1);
+        }
+
+.song-title {
+            color: #ffffff;
+            font-size: 0.9em;
+            margin-top: 10px;
+            margin-bottom: 5px;
+            text-align: center;
+            position: relative;
+            top: -110px; 
+        }
+
+        .progress-container {
+            width: 200px;
+            margin-top: -105px; 
+            margin-left: 100px;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 5px;
+            background-color: #ffffff4b;
+            border-radius: 5px;
+            box-shadow: 0 4px 10px rgb(0, 0, 0);
+        }
+
+        .progress-bar-filled {
+            height: 100%;
+            width: 0%;
+            background-color: #ffffff;
+            border-radius: 5px;
+        }
+
+        .bottom-right-image {
+            position: absolute;
+            bottom: -20px;
+            right: 0;
+            width: 400px;
+            height: auto;
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <video id="background-video" autoplay loop muted>
+        <source src="./assets/videos/v1.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <div class="wrapper">
+        <div class="tilt-box" data-tilt>
+            <div class="profile-container">
+                <div class="profile-image">
+                    <img src="./assets/imgs/kc.gif" alt="Profile Image">
+                </div>
+
+                <p class="name">kc</p>
+
+                <div class="badges">
+                    <a class="badge" target="_blank">
+                        <img src="https://cdn.discordapp.com/emojis/1315971234994851860.webp?size=80&animated=true" alt="Badge 1">
+                        <span class="tooltip">kacey</span>
+                    </a>
+                    <a class="badge" target="_blank">
+                        <img src="https://cdn.discordapp.com/emojis/1317857455257948230.webp?size=80&animated=true" alt="Badge 2">
+                        <span class="tooltip">da best</span>
+                    </a>
+                    <a class="badge" target="_blank">
+                        <img src="https://cdn.discordapp.com/emojis/1325854914982838356.webp?size=80&animated=true" alt="Badge 3">
+                        <span class="tooltip">dev</span>
+                    </a>
+                    <a class="badge" target="_blank">
+                        <img src="https://cdn.discordapp.com/emojis/1315971083454906438.webp?size=80&animated=true" alt="Badge 4">
+                        <span class="tooltip">i made the links bro</span>
+                    </a>
+                    <a class="badge" target="_blank">
+                        <img src="https://cdn.discordapp.com/emojis/1331387783733969018.webp?size=80&animated=true" alt="Badge 5">
+                        <span class="tooltip">dev</span>
+                    </a>
+                    <a class="badge" target="_blank">
+                        <img src="https://cdn.discordapp.com/emojis/1317485389505892434.webp?size=80&animated=true" alt="Badge 6">
+                        <span class="tooltip">/ecstasy</span>
+                    </a>
+                    <a class="badge" target="_blank">
+                        <img src="https://cdn.discordapp.com/emojis/1326714116471263292.webp?size=80&animated=true" alt="Badge 7">
+                        <span class="tooltip">rich egirl</span>
+                    </a>
+                </div>
+
+                <div class="icons">
+                    <a href="https://discord.gg/ecstasy" target="_blank" class="icon-discord">
+                        <img src="./assets/icons/discord.png" alt="Icon 1">
+                    </a>
+                    <a href="https://t.me/shitygirls" target="_blank" class="icon-telegram">
+                        <img src="./assets/icons/telegram.png" alt="Icon 2">
+                    </a>
+                    <a href="https://www.roblox.com/users/8379678945/profile" target="_blank" class="icon-star">
+                        <img src="./assets/icons/star.png" alt="Icon 3">
+                    </a>
+                </div>
+
+                <div class="audio-controls">
+                    <button class="audio-btn" id="prevBtn">
+                        <img src="./assets/icons/back.png" alt="Previous">
+                    </button>
+                    <button class="audio-btn" id="playPauseBtn">
+                        <img src="./assets/icons/play.png" alt="Play/Pause">
+                    </button>
+                    <button class="audio-btn" id="nextBtn">
+                        <img src="./assets/icons/next.png" alt="Next">
+                    </button>
+                </div>
+
+                <p class="song-title" id="songTitle"></p>
+
+                <div class="progress-container">
+                    <div class="progress-bar">
+                        <div class="progress-bar-filled" id="progress-bar"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <img class="bottom-right-image" src="./assets/imgs/bdy2.gif" alt="Bottom-right image">
+
+    <audio id="audio" src="./assets/songs/s1.mp3" preload="auto" autoplay muted loop></audio>
+
+    <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.7.0/dist/vanilla-tilt.min.js"></script>
+    <script>
+        VanillaTilt.init(document.querySelectorAll("[data-tilt]"), {
+            max: 25,
+            speed: 400,
+            glare: true,
+            "max-glare": 0.5
+        });
+
+        const audio = document.getElementById("audio");
+        const video = document.getElementById("background-video");
+        const playPauseBtn = document.getElementById("playPauseBtn");
+        const prevBtn = document.getElementById("prevBtn");
+        const nextBtn = document.getElementById("nextBtn");
+        const progressBar = document.getElementById("progress-bar");
+        const songTitleDisplay = document.getElementById("songTitle"); 
+
+        let media = [
+            { audio: "./assets/songs/s1.mp3", video: "./assets/videos/v1.mp4", title: "rich amiri - im gone" },
+            { audio: "./assets/songs/s2.mp3", video: "./assets/videos/v2.mp4", title: "midwxst - no handouts" },
+            { audio: "./assets/songs/s3.mp3", video: "./assets/videos/v3.mp4", title: "midwxst - so what?" },
+            { audio: "./assets/songs/s4.mp3", video: "./assets/videos/v4.mp4", title: "midwxst - i told u" }
+        ];
+        let currentMediaIndex = 0;
+
+        playPauseBtn.addEventListener("click", () => {
+            if (audio.paused) {
+                audio.play();
+                video.play();
+                playPauseBtn.innerHTML = `<img src="./assets/icons/pause.png" alt="Pause">`;
+            } else {
+                audio.pause();
+                video.pause();
+                playPauseBtn.innerHTML = `<img src="./assets/icons/play.png" alt="Play">`;
+            }
+        });
+
+        prevBtn.addEventListener("click", () => {
+            currentMediaIndex = (currentMediaIndex - 1 + media.length) % media.length;
+            updateMedia();
+        });
+
+        nextBtn.addEventListener("click", () => {
+            currentMediaIndex = (currentMediaIndex + 1) % media.length;
+            updateMedia();
+        });
+
+        function updateMedia() {
+            audio.src = media[currentMediaIndex].audio;
+            video.src = media[currentMediaIndex].video;
+            songTitleDisplay.textContent = "" + media[currentMediaIndex].title; // Update the song title text
+            audio.load();
+            video.load();
+            audio.play();
+            video.play();
+            playPauseBtn.innerHTML = `<img src="./assets/icons/pause.png" alt="Pause">`;
+        }
+
+        audio.addEventListener("timeupdate", () => {
+            const progress = (audio.currentTime / audio.duration) * 100;
+            progressBar.style.width = progress + "%";
+        });
+
+       
+        window.onload = function() {
+            audio.muted = false;
+            audio.play();
+            video.play();
+            updateMedia();
+        };
+
+        var snowStorm = (function(window, document) {
+
+        // --- if your readin this your already skidding my code so just stop bro ---
+
+        this.autoStart = true;
+        this.excludeMobile = true;
+        this.flakesMax = 128;
+        this.flakesMaxActive = 64;
+        this.animationInterval = 50;
+        this.useGPU = true;
+        this.className = null;
+        this.excludeMobile = true;
+        this.flakeBottom = null;
+        this.followMouse = false;
+        this.snowColor = '#fff';
+        this.snowCharacter = '&bull;';
+        this.snowStick = true;
+        this.targetElement = null;
+        this.useMeltEffect = true;
+        this.useTwinkleEffect = false;
+        this.usePositionFixed = false;
+        this.usePixelPosition = false;
+
+        // --- stop right there skid ---
+
+        this.freezeOnBlur = true;
+        this.flakeLeftOffset = 0;
+        this.flakeRightOffset = 0;
+        this.flakeWidth = 8;
+        this.flakeHeight = 8;
+        this.vMaxX = 5;
+        this.vMaxY = 4;
+        this.zIndex = 0;
+
+        var storm = this,
+        features,
+
+        isIE = navigator.userAgent.match(/msie/i),
+        isIE6 = navigator.userAgent.match(/msie 6/i),
+        isMobile = navigator.userAgent.match(/mobile|opera m(ob|in)/i),
+        isBackCompatIE = (isIE && document.compatMode === 'BackCompat'),
+        noFixed = (isBackCompatIE || isIE6),
+        screenX = null, screenX2 = null, screenY = null, scrollY = null, docHeight = null, vRndX = null, vRndY = null,
+        windOffset = 1,
+        windMultiplier = 2,
+        flakeTypes = 6,
+        fixedForEverything = false,
+        targetElementIsRelative = false,
+        opacitySupported = (function(){
+        try {
+        document.createElement('div').style.opacity = '0.5';
+        } catch(e) {
+        return false;
+        }
+        return true;
+        }());
+        didInit = false,
+        docFrag = document.createDocumentFragment();
+
+        features = (function() {
+
+        var getAnimationFrame;
+
+
+        function timeoutShim(callback) {
+        window.setTimeout(callback, 1000/(storm.animationInterval || 20));
+        }
+
+        var _animationFrame = (window.requestAnimationFrame ||
+        window.webkitRequestAnimationFrame ||
+        window.mozRequestAnimationFrame ||
+        window.oRequestAnimationFrame ||
+        window.msRequestAnimationFrame ||
+        timeoutShim);
+
+
+        getAnimationFrame = _animationFrame ? function() {
+        return _animationFrame.apply(window, arguments);
+        } : null;
+
+        var testDiv;
+
+        testDiv = document.createElement('div');
+
+        function has(prop) {
+
+        // stop it skid
+        var result = testDiv.style[prop];
+        return (result !== undefined ? prop : null);
+
+        }
+
+
+        var localFeatures = {
+
+        transform: {
+        ie: has('-ms-transform'),
+        moz: has('MozTransform'),
+        opera: has('OTransform'),
+        webkit: has('webkitTransform'),
+        w3: has('transform'),
+        prop: null
+        },
+
+        getAnimationFrame: getAnimationFrame
+
+        };
+
+        localFeatures.transform.prop = (
+        localFeatures.transform.w3 ||
+        localFeatures.transform.moz ||
+        localFeatures.transform.webkit ||
+        localFeatures.transform.ie ||
+        localFeatures.transform.opera
+        );
+
+        testDiv = null;
+
+        return localFeatures;
+
+        }());
+
+        this.timer = null;
+        this.flakes = [];
+        this.disabled = false;
+        this.active = false;
+        this.meltFrameCount = 20;
+        this.meltFrames = [];
+
+        this.setXY = function(o, x, y) {
+
+        if (!o) {
+        return false;
+        }
+
+        if (storm.usePixelPosition || targetElementIsRelative) {
+
+        o.style.left = (x - storm.flakeWidth) + 'px';
+        o.style.top = (y - storm.flakeHeight) + 'px';
+
+        } else if (noFixed) {
+
+        o.style.right = (100-(x/screenX*100)) + '%';
+
+        o.style.top = (Math.min(y, docHeight-storm.flakeHeight)) + 'px';
+
+        } else {
+
+        if (!storm.flakeBottom) {
+
+
+        o.style.right = (100-(x/screenX*100)) + '%';
+        o.style.bottom = (100-(y/screenY*100)) + '%';
+
+        } else {
+
+
+        o.style.right = (100-(x/screenX*100)) + '%';
+        o.style.top = (Math.min(y, docHeight-storm.flakeHeight)) + 'px';
+
+        }
+
+        }
+
+        };
+
+        this.events = (function() {
+
+        var old = (!window.addEventListener && window.attachEvent), slice = Array.prototype.slice,
+        evt = {
+        add: (old?'attachEvent':'addEventListener'),
+        remove: (old?'detachEvent':'removeEventListener')
+        };
+
+        function getArgs(oArgs) {
+        var args = slice.call(oArgs), len = args.length;
+        if (old) {
+        args[1] = 'on' + args[1];
+        if (len > 3) {
+        args.pop(); // cmon skid
+        }
+        } else if (len === 3) {
+        args.push(false);
+        }
+        return args;
+        }
+
+        function apply(args, sType) {
+        var element = args.shift(),
+        method = [evt[sType]];
+        if (old) {
+        element[method](args[0], args[1]);
+        } else {
+        element[method].apply(element, args);
+        }
+        }
+
+        function addEvent() {
+        apply(getArgs(arguments), 'add');
+        }
+
+        function removeEvent() {
+        apply(getArgs(arguments), 'remove');
+        }
+
+        return {
+        add: addEvent,
+        remove: removeEvent
+        };
+
+        }());
+
+        function rnd(n,min) {
+        if (isNaN(min)) {
+        min = 0;
+        }
+        return (Math.random()*n)+min;
+        }
+
+        function plusMinus(n) {
+        return (parseInt(rnd(2),10)===1?n*-1:n);
+        }
+
+        this.randomizeWind = function() {
+        var i;
+        vRndX = plusMinus(rnd(storm.vMaxX,0.2));
+        vRndY = rnd(storm.vMaxY,0.2);
+        if (this.flakes) {
+        for (i=0; i<this.flakes.length; i++) {
+        if (this.flakes[i].active) {
+        this.flakes[i].setVelocities();
+        }
+        }
+        }
+        };
+
+        this.scrollHandler = function() {
+        var i;
+
+        scrollY = (storm.flakeBottom ? 0 : parseInt(window.scrollY || document.documentElement.scrollTop || (noFixed ? document.body.scrollTop : 0), 10));
+        if (isNaN(scrollY)) {
+        scrollY = 0;
+        }
+        if (!fixedForEverything && !storm.flakeBottom && storm.flakes) {
+        for (i=0; i<storm.flakes.length; i++) {
+        if (storm.flakes[i].active === 0) {
+        storm.flakes[i].stick();
+        }
+        }
+        }
+        };
+
+        this.resizeHandler = function() {
+        if (window.innerWidth || window.innerHeight) {
+        screenX = window.innerWidth - 16 - storm.flakeRightOffset;
+        screenY = (storm.flakeBottom || window.innerHeight);
+        } else {
+        screenX = (document.documentElement.clientWidth || document.body.clientWidth || document.body.scrollWidth) - (!isIE ? 8 : 0) - storm.flakeRightOffset;
+        screenY = storm.flakeBottom || document.documentElement.clientHeight || document.body.clientHeight || document.body.scrollHeight;
+        }
+        docHeight = document.body.offsetHeight;
+        screenX2 = parseInt(screenX/2,10);
+        };
+
+        this.resizeHandlerAlt = function() {
+        screenX = storm.targetElement.offsetWidth - storm.flakeRightOffset;
+        screenY = storm.flakeBottom || storm.targetElement.offsetHeight;
+        screenX2 = parseInt(screenX/2,10);
+        docHeight = document.body.offsetHeight;
+        };
+
+        this.freeze = function() {
+
+        if (!storm.disabled) {
+        storm.disabled = 1;
+        } else {
+        return false;
+        }
+        storm.timer = null;
+        };
+
+        this.resume = function() {
+        if (storm.disabled) {
+        storm.disabled = 0;
+        } else {
+        return false;
+        }
+        storm.timerInit();
+        };
+
+        this.toggleSnow = function() {
+        if (!storm.flakes.length) {
+        // stop it skid
+        storm.start();
+        } else {
+        storm.active = !storm.active;
+        if (storm.active) {
+        storm.show();
+        storm.resume();
+        } else {
+        storm.stop();
+        storm.freeze();
+        }
+        }
+        };
+
+        this.stop = function() {
+        var i;
+        this.freeze();
+        for (i=0; i<this.flakes.length; i++) {
+        this.flakes[i].o.style.display = 'none';
+        }
+        storm.events.remove(window,'scroll',storm.scrollHandler);
+        storm.events.remove(window,'resize',storm.resizeHandler);
+        if (storm.freezeOnBlur) {
+        if (isIE) {
+        storm.events.remove(document,'focusout',storm.freeze);
+        storm.events.remove(document,'focusin',storm.resume);
+        } else {
+        storm.events.remove(window,'blur',storm.freeze);
+        storm.events.remove(window,'focus',storm.resume);
+        }
+        }
+        };
+
+        this.show = function() {
+        var i;
+        for (i=0; i<this.flakes.length; i++) {
+        this.flakes[i].o.style.display = 'block';
+        }
+        };
+
+        this.SnowFlake = function(type,x,y) {
+        var s = this;
+        this.type = type;
+        this.x = x||parseInt(rnd(screenX-20),10);
+        this.y = (!isNaN(y)?y:-rnd(screenY)-12);
+        this.vX = null;
+        this.vY = null;
+        this.vAmpTypes = [1,1.2,1.4,1.6,1.8];
+        this.vAmp = this.vAmpTypes[this.type] || 1;
+        this.melting = false;
+        this.meltFrameCount = storm.meltFrameCount;
+        this.meltFrames = storm.meltFrames;
+        this.meltFrame = 0;
+        this.twinkleFrame = 0;
+        this.active = 1;
+        this.fontSize = (10+(this.type/5)*10);
+        this.o = document.createElement('div');
+        this.o.innerHTML = storm.snowCharacter;
+        if (storm.className) {
+        this.o.setAttribute('class', storm.className);
+        }
+        this.o.style.color = storm.snowColor;
+        this.o.style.position = (fixedForEverything?'fixed':'absolute');
+        if (storm.useGPU && features.transform.prop) {
+        // if your reading this your a skid.
+        this.o.style[features.transform.prop] = 'translate3d(0px, 0px, 0px)';
+        }
+        this.o.style.width = storm.flakeWidth+'px';
+        this.o.style.height = storm.flakeHeight+'px';
+        this.o.style.fontFamily = 'arial,verdana';
+        this.o.style.cursor = 'default';
+        this.o.style.overflow = 'hidden';
+        this.o.style.fontWeight = 'normal';
+        this.o.style.zIndex = storm.zIndex;
+        docFrag.appendChild(this.o);
+
+        this.refresh = function() {
+        if (isNaN(s.x) || isNaN(s.y)) {
+
+        return false;
+        }
+        storm.setXY(s.o, s.x, s.y);
+        };
+
+        this.stick = function() {
+        if (noFixed || (storm.targetElement !== document.documentElement && storm.targetElement !== document.body)) {
+        s.o.style.top = (screenY+scrollY-storm.flakeHeight)+'px';
+        } else if (storm.flakeBottom) {
+        s.o.style.top = storm.flakeBottom+'px';
+        } else {
+        s.o.style.display = 'none';
+        s.o.style.bottom = '0%';
+        s.o.style.position = 'fixed';
+        s.o.style.display = 'block';
+        }
+        };
+
+        this.vCheck = function() {
+        if (s.vX>=0 && s.vX<0.2) {
+        s.vX = 0.2;
+        } else if (s.vX<0 && s.vX>-0.2) {
+        s.vX = -0.2;
+        }
+        if (s.vY>=0 && s.vY<0.2) {
+        s.vY = 0.2;
+        }
+        };
+
+        this.move = function() {
+        var vX = s.vX*windOffset, yDiff;
+        s.x += vX;
+        s.y += (s.vY*s.vAmp);
+        if (s.x >= screenX || screenX-s.x < storm.flakeWidth) {
+        s.x = 0;
+        } else if (vX < 0 && s.x-storm.flakeLeftOffset < -storm.flakeWidth) {
+        s.x = screenX-storm.flakeWidth-1;
+        }
+        s.refresh();
+        yDiff = screenY+scrollY-s.y+storm.flakeHeight;
+        if (yDiff<storm.flakeHeight) {
+        s.active = 0;
+        if (storm.snowStick) {
+        s.stick();
+        } else {
+        s.recycle();
+        }
+        } else {
+        if (storm.useMeltEffect && s.active && s.type < 3 && !s.melting && Math.random()>0.998) {
+
+        s.melting = true;
+        s.melt();
+
+        }
+        if (storm.useTwinkleEffect) {
+        if (s.twinkleFrame < 0) {
+        if (Math.random() > 0.97) {
+        s.twinkleFrame = parseInt(Math.random() * 8, 10);
+        }
+        } else {
+        s.twinkleFrame--;
+        if (!opacitySupported) {
+        s.o.style.visibility = (s.twinkleFrame && s.twinkleFrame % 2 === 0 ? 'hidden' : 'visible');
+        } else {
+        s.o.style.opacity = (s.twinkleFrame && s.twinkleFrame % 2 === 0 ? 0 : 1);
+        }
+        }
+        }
+        }
+        };
+
+        this.animate = function() {
+        s.move();
+        };
+
+        this.setVelocities = function() {
+        s.vX = vRndX+rnd(storm.vMaxX*0.12,0.1);
+        s.vY = vRndY+rnd(storm.vMaxY*0.12,0.1);
+        };
+
+        this.setOpacity = function(o,opacity) {
+        if (!opacitySupported) {
+        return false;
+        }
+        o.style.opacity = opacity;
+        };
+
+        this.melt = function() {
+        if (!storm.useMeltEffect || !s.melting) {
+        s.recycle();
+        } else {
+        if (s.meltFrame < s.meltFrameCount) {
+        s.setOpacity(s.o,s.meltFrames[s.meltFrame]);
+        s.o.style.fontSize = s.fontSize-(s.fontSize*(s.meltFrame/s.meltFrameCount))+'px';
+        s.o.style.lineHeight = storm.flakeHeight+2+(storm.flakeHeight*0.75*(s.meltFrame/s.meltFrameCount))+'px';
+        s.meltFrame++;
+        } else {
+        s.recycle();
+        }
+        }
+        };
+
+        this.recycle = function() {
+        s.o.style.display = 'none';
+        s.o.style.position = (fixedForEverything?'fixed':'absolute');
+        s.o.style.bottom = 'auto';
+        s.setVelocities();
+        s.vCheck();
+        s.meltFrame = 0;
+        s.melting = false;
+        s.setOpacity(s.o,1);
+        s.o.style.padding = '0px';
+        s.o.style.margin = '0px';
+        s.o.style.fontSize = s.fontSize+'px';
+        s.o.style.lineHeight = (storm.flakeHeight+2)+'px';
+        s.o.style.textAlign = 'center';
+        s.o.style.verticalAlign = 'baseline';
+        s.x = parseInt(rnd(screenX-storm.flakeWidth-20),10);
+        s.y = parseInt(rnd(screenY)*-1,10)-storm.flakeHeight;
+        s.refresh();
+        s.o.style.display = 'block';
+        s.active = 1;
+        };
+
+        this.recycle();
+        this.refresh();
+
+        };
+
+        this.snow = function() {
+        var active = 0, flake = null, i, j;
+        for (i=0, j=storm.flakes.length; i<j; i++) {
+        if (storm.flakes[i].active === 1) {
+        storm.flakes[i].move();
+        active++;
+        }
+        if (storm.flakes[i].melting) {
+        storm.flakes[i].melt();
+        }
+        }
+        if (active<storm.flakesMaxActive) {
+        flake = storm.flakes[parseInt(rnd(storm.flakes.length),10)];
+        if (flake.active === 0) {
+        flake.melting = true;
+        }
+        }
+        if (storm.timer) {
+        features.getAnimationFrame(storm.snow);
+        }
+        };
+
+        this.mouseMove = function(e) {
+        if (!storm.followMouse) {
+        return true;
+        }
+        var x = parseInt(e.clientX,10);
+        if (x<screenX2) {
+        windOffset = -windMultiplier+(x/screenX2*windMultiplier);
+        } else {
+        x -= screenX2;
+        windOffset = (x/screenX2)*windMultiplier;
+        }
+        };
+
+        this.createSnow = function(limit,allowInactive) {
+        var i;
+        for (i=0; i<limit; i++) {
+        storm.flakes[storm.flakes.length] = new storm.SnowFlake(parseInt(rnd(flakeTypes),10));
+        if (allowInactive || i>storm.flakesMaxActive) {
+        storm.flakes[storm.flakes.length-1].active = -1;
+        }
+        }
+        storm.targetElement.appendChild(docFrag);
+        };
+
+        this.timerInit = function() {
+        storm.timer = true;
+        storm.snow();
+        };
+
+        this.init = function() {
+        var i;
+        for (i=0; i<storm.meltFrameCount; i++) {
+        storm.meltFrames.push(1-(i/storm.meltFrameCount));
+        }
+        storm.randomizeWind();
+        storm.createSnow(storm.flakesMax);
+        storm.events.add(window,'resize',storm.resizeHandler);
+        storm.events.add(window,'scroll',storm.scrollHandler);
+        if (storm.freezeOnBlur) {
+        if (isIE) {
+        storm.events.add(document,'focusout',storm.freeze);
+        storm.events.add(document,'focusin',storm.resume);
+        } else {
+        storm.events.add(window,'blur',storm.freeze);
+        storm.events.add(window,'focus',storm.resume);
+        }
+        }
+        storm.resizeHandler();
+        storm.scrollHandler();
+        if (storm.followMouse) {
+        storm.events.add(isIE?document:window,'mousemove',storm.mouseMove);
+        }
+        storm.animationInterval = Math.max(20,storm.animationInterval);
+        storm.timerInit();
+        };
+
+        this.start = function(bFromOnLoad) {
+        if (!didInit) {
+        didInit = true;
+        } else if (bFromOnLoad) {
+
+        return true;
+        }
+        if (typeof storm.targetElement === 'string') {
+        var targetID = storm.targetElement;
+        storm.targetElement = document.getElementById(targetID);
+        if (!storm.targetElement) {
+        throw new Error('Snowstorm: Unable to get targetElement "'+targetID+'"');
+        }
+        }
+        if (!storm.targetElement) {
+        storm.targetElement = (document.body || document.documentElement);
+        }
+        if (storm.targetElement !== document.documentElement && storm.targetElement !== document.body) {
+
+        storm.resizeHandler = storm.resizeHandlerAlt;
+
+        storm.usePixelPosition = true;
+        }
+        storm.resizeHandler();
+        storm.usePositionFixed = (storm.usePositionFixed && !noFixed && !storm.flakeBottom);
+        if (window.getComputedStyle) {
+
+        try {
+        targetElementIsRelative = (window.getComputedStyle(storm.targetElement, null).getPropertyValue('position') === 'relative');
+        } catch(e) {
+
+        targetElementIsRelative = false;
+        }
+        }
+        fixedForEverything = storm.usePositionFixed;
+        if (screenX && screenY && !storm.disabled) {
+        storm.init();
+        storm.active = true;
+        }
+        };
+
+        function doDelayedStart() {
+        window.setTimeout(function() {
+        storm.start(true);
+        }, 20);
+
+        storm.events.remove(isIE?document:window,'mousemove',doDelayedStart);
+        }
+
+        function doStart() {
+        if (!storm.excludeMobile || !isMobile) {
+        doDelayedStart();
+        }
+
+        storm.events.remove(window, 'load', doStart);
+        }
+
+
+        if (storm.autoStart) {
+        storm.events.add(window, 'load', doStart, false);
+        }
+
+        return this;
+
+        }(window, document));
+
+    </script>
+
+</body>
+</html>
