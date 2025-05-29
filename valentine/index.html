@@ -1,0 +1,98 @@
+<!-- jesuslovesu ❤ -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content=winner property=og:title>
+    <meta content=https://cdn.discordapp.com/emojis/1244811881885995038.gif?size=96&quality=lossless property=og:image>
+    <meta content=#36393e name=theme-color data-react-helmet=true>
+    <meta content="luh bro" name=description>
+    <title>valentines</title>
+    <link href="https://fonts.cdnfonts.com/css/common-pixel" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/pf-tempesta-five" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/spence.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.8/typed.min.js"></script>
+    <link rel="icon" href="https://cdn.discordapp.com/attachments/1377490665621159988/1377503463663210517/favicon.png?ex=68393392&is=6837e212&hm=193fbb3b81d80502379b56f25a73c183368b305d246c34962b7517c73316411f&" type="image/x-icon">
+
+
+  </head>
+  <style>
+  @font-face {
+    font-family: 'MC';
+    src: url('assets/fonts/MC.ttf') format('truetype');
+  }
+  </style>
+  <body>
+    <div id="enter">
+        <b class="begin">CLICK</b>
+    </div>
+    <div class="profile-container">
+      <div class="profile-picture">
+        <img src="assets/img/star.jpg" alt="Profile Picture" draggable="false">
+      </div>
+      <div class="name">valentines</div>
+      <div class="badge-container">
+        <div id="badge1" class="badge"></div>
+        <div id="text-pop1">forteen</div>
+        <div id="badge2" class="badge"></div>
+        <div id="text-pop2">days after</div>
+        <div id="badge3" class="badge"></div>
+        <div id="text-pop3">february</div>
+      </div>
+      <div class="social">
+        <a href='https://www.instagram.com/14daysafterfeb/' target='_blank' class="doxbin" draggable="false">
+          <img src='assets/img/ig.png' draggable="false" alt="Discord">
+        </a>
+        <a href='https://open.spotify.com/artist/0kD7x9HaCRzszuCS2Lls1O?si=3a9a14d629124a41' target='_blank' class="tiktok" draggable="false">
+          <img src='assets/img/s.png' draggable="false" alt="soundcloud">
+        </a>
+      </div>
+      <div class="audio-player">
+        <div class="song-info">
+          <span class="song-title">Che - SOS</span>
+        </div>
+        <div class="player-controls">
+          <div class="music-slider">
+            <div class="slider-progress"></div>
+          </div>
+          <div class="control-buttons">
+            <div class="backward-button">
+              <img src="assets/img/next.png" alt="Backward" draggable="false">
+            </div>
+            <div class="current-time">0:00</div>
+            <div class="pause-button">
+              <img src="assets/img/pause.png" alt="Pause" class="pause-icon" draggable="false">
+              <img src="assets/img/play.png" alt="Play" class="play-icon" style="display: none;" draggable="false">
+            </div>
+            <div class="forward-button">
+              <img src="assets/img/back.png" alt="Forward" draggable="false">
+            </div>
+            <div class="total-duration">2:17</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <audio id="audio" src="assets/audio/s.mp3"></audio>
+    <video id="video" autoplay muted loop>
+      <source src="assets/bg/s.mp4" type="video/mp4">
+    </video>
+
+
+    <script src="assets/js/bat.js"></script>
+    <script src="assets/js/audio.js"></script>
+    <script src="assets/js/control.js"></script>
+    <script src="assets/js/titles.js"></script>
+
+    <script>
+      window.addEventListener("DOMContentLoaded", () => {
+        const audio = document.getElementById("audio");
+        if (audio) {
+          audio.volume = 0.3;
+        }
+      });
+    </script>
+  </body>
+</html>
