@@ -19,15 +19,15 @@ document.addEventListener("DOMContentLoaded", function () {
         },
 
         {
-            title: "2",
-            audioSrc: "assets/audio/s2.mp3",
-            videoSrc: "assets/bg/s2.mp4",
-            duration: 225
-        },
-         {
             title: "3",
             audioSrc: "assets/audio/s3.mp3",
             videoSrc: "assets/bg/s3.mp4",
+            duration: 225
+        },
+         {
+            title: "2",
+            audioSrc: "assets/audio/s2.mp3",
+            videoSrc: "assets/bg/s2.mp4",
             duration: 225
         },
     ];
