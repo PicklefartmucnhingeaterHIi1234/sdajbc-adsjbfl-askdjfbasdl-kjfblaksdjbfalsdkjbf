@@ -1,0 +1,728 @@
+@font-face {
+    font-family: 'MC';
+    src: url('assets/fonts/MC.ttf') format('truetype');
+  }
+body {
+    background-color: black;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    overflow: hidden; 
+}
+* {cursor: url(https://cur.cursors-4u.net/cursors/cur-7/cur610.cur), auto !important;}
+.profile-container {
+    width: 500px; 
+    height: 420px; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent; 
+    border: 0px solid rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(2px); 
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); 
+    margin-top: -130px; 
+    -webkit-touch-callout: none;
+-webkit-user-select: none;
+-khtml-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+user-select: none;
+position: relative;
+}
+
+.profile-picture {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    overflow: hidden; /* Ensures the image fits within the circular shape */
+    position: relative;
+    margin-bottom: 45px;
+    margin-right: 12px;
+}
+
+.profile-picture img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image covers the circular div without stretching */
+}
+.profile-picture {
+    background-size: cover;
+    position: relative;
+}
+.name {
+    font-family: "MC";
+    font-weight: lighter;
+    font-size: 30px;
+    color: #ffffff;
+    text-shadow: 2px 2px 4px rgba(1, 0, 2, 0.5);
+    top: 10px; 
+    animation: sparkle 2s infinite;
+    position: relative;
+    -webkit-touch-callout: none;
+-webkit-user-select: none;
+-khtml-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+user-select: none;
+margin-top: -50px;
+text-shadow: 0px 0px 5px rgb(255, 255, 255);
+}
+p{
+    font-family: "MC";
+    font-weight: lighter;
+    font-size: 30px;
+    color: #ffffff;
+    text-shadow: 2px 2px 4px rgba(1, 0, 2, 0.5);
+    margin-top: 3px; 
+    animation: sparkle 2s infinite;
+    position: relative;
+    -webkit-touch-callout: none;
+-webkit-user-select: none;
+-khtml-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+user-select: none;
+margin-top: -50px;
+}
+.badge-container {
+    position: absolute;
+    top: 330px; /* Adjust based on your design */
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Space between badges */
+  }
+
+  .badge {
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
+    position: relative;
+    top: -40px;
+  }
+
+  #badge1 {
+    width: 25px;
+    height: 25px;
+    background-image: url('https://cdn.discordapp.com/emojis/1160662861983522916.webp?size=96&animated=true');
+  }
+
+  #badge2 {
+    width: 20px;
+    height: 20px;
+    background-image: url('https://cdn.discordapp.com/emojis/1160660690332307496.webp?size=96');
+  }
+
+  #badge3 {
+    width: 25px;
+    height: 25px;
+    background-image: url('https://cdn.discordapp.com/emojis/1160662861983522916.webp?size=96&animated=true');
+  }
+
+  
+  #text-pop1, #text-pop2, #text-pop3{
+    display: none;
+    position: absolute;
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: "MC";
+    padding: 5px 10px;
+    background-color: transparent;
+    border-radius: 5px;
+    pointer-events: none;
+    white-space: nowrap;
+    animation: fade-in 0.3s ease-in-out;
+  }
+
+  #text-pop1 {
+    top: -20px; /* Adjust as needed */
+    left: -8px;
+  }
+
+  #text-pop2 {
+    top: -20px; /* Adjust as needed */
+    left: 30px;
+  }
+  
+  #text-pop3 {
+    top: -20px; /* Adjust as needed */
+    left: 65px;
+  }
+
+  #badge1:hover + #text-pop1 {
+    display: block;
+  }
+
+  #badge2:hover + #text-pop2 {
+    display: block;
+
+  }#badge3:hover + #text-pop3 {
+    display: block;
+  }
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+
+.text-pop {
+    display: none;
+    position: absolute;
+    top: 140%; 
+    left: 50%;
+    transform: translateX(-50%);
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 5px 10px;
+    background-color: transparent;
+    border-radius: 5px;
+    pointer-events: none;
+    white-space: nowrap;
+    animation: fade-in 0.3s ease-in-out;
+    -webkit-touch-callout: none;
+-webkit-user-select: none;
+-khtml-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+user-select: none;
+font-family: "MC";
+}
+
+
+.social {
+    display: flex;
+    gap: 0.5px;
+    align-items: center;
+    margin-top: 60px;
+}
+
+.social a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 50px;
+    height: 50px;
+}
+
+.social img {
+    transition: transform 0.4s;
+    object-fit: contain;
+    display: block;
+}
+
+.social a.discord img {
+    height: 45px;
+    width: 45px;
+    right: 5px;
+}
+
+.social a.tiktok img {
+    height: 30px;
+    width: 30px;
+    right: 3px;
+}
+
+.social a.soundcloud img {
+    height: 45px;
+    width: 45px;
+    right: -5px;
+}
+
+.social a.doxbin img {
+    height: 30px;
+    width: 30px;
+    right: -6px;
+}
+
+.social a img {
+    position: relative;
+}
+
+.social img:hover {
+    transform: scale(1.2);
+}
+
+.description {
+    font-family: "MC";
+    font-size: 40px;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(1, 0, 2, 0.5);
+    white-space: nowrap;
+    overflow: hidden;
+    display: flex;
+    height: 1.2em;
+    align-items: center;
+    margin-top: -1px;
+}
+
+.fab {
+    font-size: 40px;
+}
+
+@keyframes sparkle {
+    0%, 100% { background-image: url('https://cdn.discordapp.com/attachments/975129514499772516/1043554950350897242/sparkle.gif'); }
+}
+
+
+h4 {
+    text-align: center;
+    font-family: 'Common Pixel', sans-serif;
+    font-size: 20px;
+    position: fixed;
+    bottom: -30px;
+    left: 0;
+    right: 0;
+    background-color: transparent;
+    padding: 10px 0;
+    color: #ffffff;
+    text-shadow: 2px 2px 4px rgba(1, 0, 2, 0.5);
+}
+h4 a {
+text-decoration: none !important;
+color: #ffffff; 
+transition: text-decoration 0.3s ease-in-out;
+}
+h4 a:hover {
+text-decoration: underline !important;
+}
+.clock {
+    position: absolute;
+    top: -179px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 20px;
+    color: rgb(255, 255, 255);
+    text-shadow: 2px 2px 4px rgba(1, 0, 2, 0.5);
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    }
+.noselect {
+-webkit-touch-callout: none;
+-webkit-user-select: none;
+-khtml-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+user-select: none;
+}
+.snowflake {
+pointer-events: none;
+cursor: default;
+}
+h3.song-title {
+    font-family: 'Satoshi', sans-serif;
+    margin-top: 0;
+    font-weight: 10000;
+    font-size: 14px;
+    color: #ffffff;
+    text-shadow: 7px 5px 4px rgba(0, 0, 0, 0.5);
+    text-align: center; 
+}
+.audio-player {
+    position: absolute;
+    top: 450px; 
+    left: 0%;
+    background: transparent; 
+    border-radius: 10px;
+    padding: 15px; 
+    width: 510px;
+    margin-top: 20px; 
+    box-shadow: 5px 8px 20px rgba(0, 0, 0, 0.7); 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    height: 100px;
+    backdrop-filter: blur(2px);
+}
+button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    display: block;
+    border-radius: 5px;
+    padding: 10px 15px;
+    margin-top: 6px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    box-shadow: 5px 8px 20px rgba(0, 0, 0, 0.7); 
+}
+
+.button-icon {
+    font-size: 20px; 
+    color: #ffffff; 
+}
+
+button:hover {
+    transform: scale(1.2);
+}
+
+#pauseButton {
+    display: none;
+}
+.music-timeline {
+    width: 100%;
+    height: 10x;
+    background: transparent;
+    border-radius: 10px;
+    box-shadow: 5px 8px 20px rgba(0, 0, 0, 0.7);
+    position: relative;
+    margin-top: -7px;
+}
+
+.timeline-progress {
+    height: 100%;
+    width: 100%; 
+    background-color: #ffffff;
+    position: absolute;
+    border-radius: 10px;
+    top: 0;
+    left: 0;
+    transform: scaleX(1);
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.timeline-labels {
+    display: flex;
+    font-family: 'Satoshi', sans-serif;
+    font-weight: 10000;
+    color: #ffffff;
+    justify-content: space-between;
+    align-items: center;
+    text-shadow: 7px 5px 4px rgba(0, 0, 0, 0.5);
+}
+
+.timeline-labels span {
+    font-size: 5.2px;
+    margin: 0 10px; 
+}
+
+.timeline-labels #currentTime {
+    order: -1;
+}
+
+.timeline-labels #totalDuration {
+    order: 1; 
+}
+
+@media (max-width: 768px) {
+    body {
+        background-image: none;
+    }
+
+    .profile-container {
+        width: 90%;
+        margin: 10px;
+        position: relative;
+        padding-bottom: 100px;
+    }
+
+    .profile-picture {
+        width: 150px;
+        height: 150px;
+        margin-top: -30px;
+    }
+
+    .name {
+        font-size: 24px;
+    }
+
+    .badge,
+    #badge1,
+    #badge2 {
+        top: 170%;
+    }
+
+    .text-pop,
+    #text-pop1,
+    #text-pop2 {
+        top: 120%;
+    }
+
+    .social-icons {
+        margin-top: 30px;
+    }
+
+    .audio-player {
+        display: none; 
+    }
+
+    .clock {
+        display: none; 
+    }
+
+    .footer {
+        position: relative;
+        text-align: center;
+        font-family: 'Common Pixel', sans-serif;
+        font-size: 20px;
+        padding: 10px 0;
+        color: #ffffff;
+        text-shadow: 2px 2px 4px rgba(1, 0, 2, 0.5);
+        z-index: 1;
+        margin-top: 10px; 
+    }
+}
+#enter{
+    background-color: #00000000;
+}
+
+#enter,
+video {
+    height: 100vh;
+    position: fixed;
+}
+
+#enter,
+.fixed-fluid,
+video {
+    top: 0;
+    left: 0;
+}
+
+#enter,
+.song-info {
+    text-align: center;
+}
+
+#enter {
+    z-index: 3;
+    opacity: 1;
+    width: 100%;
+    transition: opacity 0.73s ease-out;
+}
+
+.begin {
+    top: 50%;
+    left: 50%;
+    color: #13030300;
+    transform: translate(-50%, -50%);
+    font-family: "MC";
+    text-shadow: rgba(0, 0, 0, 0.35) 0px 0px 7px, rgba(0, 0, 0, 0.35)px 29px;
+    transition: opacity 0.73s ease-out;
+    font-size: 30px;
+    font-weight: lighter;
+    animation: rainbow 5s infinite;
+    -webkit-animation: rainbow 5s infinite;
+    -ms-animation: rainbow 5s infinite;
+}
+.info-box {
+    width: 88.6%;
+    height: 120px;
+    border-radius: 7.2px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: "MC", monospace;
+    font-size: 14px;
+    z-index: 0;
+    padding: 0 20px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.song-info {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: -20px; /* Reduced margin to bring title closer to slider */
+    font-family: "MC";
+}
+
+.song-title {
+    font-weight: lighter;
+    font-family: monospace;
+    text-align: center; /* Center text */
+    text-shadow: 2px 2px 5px black;
+    animation: enter 1s ease;
+    font-family: "MC";
+    font-size: 25px;
+    color: #ffffff;
+}
+
+.player-controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-top: 30px;
+    position: relative;
+    animation: enter 1s ease;
+}
+
+.music-slider {
+    width: 320px;
+    height: 12px;
+    border-radius: 25px;
+    background-color: #ccc;
+    position: relative;
+    cursor: pointer;
+    margin-bottom: 85px;
+}
+
+.slider-progress {
+    height: 100%;
+    background-color: #fff;
+    width: 0%;
+    border-radius: 22px;
+    position: relative;
+}
+
+.slider-progress::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translate(50%, -50%);
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background-color: #fff;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.274);
+}
+
+.pause-button,
+.backward-button,
+.forward-button {
+    width: 30px;
+    height: 30px;
+    border-radius: 10px;
+    padding: 7px 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 5px 8px 20px rgba(0, 0, 0, 0.7);
+    position: absolute;
+    top: -97px;
+}
+
+.pause-icon,
+.play-icon {
+    width: 35px;
+    height: 35px;
+}
+
+.current-time,
+.total-duration {
+    font-size: 15px;
+    position: absolute;
+    margin-top: -5px;
+    color: #fff;
+    font-family: "MC";
+    text-shadow: 2px 2px 5px black;
+    font-weight: lighter;
+    margin-top: -7px;
+}
+
+.current-time {
+    top: -120px;
+    left: -200px;
+}
+
+.total-duration {
+    top: -120px;
+    left: 166px;
+}
+
+.control-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    position: relative;
+}
+
+.backward-button {
+    left: 34px;
+}
+
+.forward-button {
+    right: 34px;
+}
+
+.backward-button img,
+.forward-button img {
+    width: 30px;
+    height: 30px;
+    font-weight: bold;
+}
+video{
+    z-index: -1;
+}
+video {
+    top: 0;
+    left: 0;
+}
+video {
+    width: 100vw;
+    object-fit: fill;
+    z-index: -1;
+}
+#enter {
+    background-color: #000;
+    height: 100vh; /* Full viewport height */
+    width: 100vw; /* Full viewport width */
+    position: fixed; /* Fixed position to stay on top */
+    top: 0; /* Align to the top of the viewport */
+    left: 0; /* Align to the left of the viewport */
+    display: flex; /* Use flexbox for centering */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    z-index: 3; /* Ensure it's on top */
+    opacity: 1;
+    transition: opacity 0.73s ease-out;
+}
+
+.begin {
+    color: #fff;
+    font-family: monospace;
+    text-shadow: rgba(0, 0, 0, 0.35) 0px 0px 7px, rgba(0, 0, 0, 0.35)px 29px;
+    font-size: 30px;
+    font-weight: lighter;
+    animation: rainbow 5s infinite; /* Add any animations if needed */
+    text-align: center; /* Center text within its container */
+    position: absolute; /* Absolute positioning within #enter */
+    top: 50%; /* Move down by 50% of parent height */
+    left: 50%; /* Move right by 50% of parent width */
+    transform: translate(-50%, -50%); /* Center the element */
+    margin: 0; /* Remove any default margins */
+    padding: 0; /* Remove any default padding */
+    box-sizing: border-box; /* Ensure padding and border are included in width/height */
+}
