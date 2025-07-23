@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>victim.wtf</title>
+      <link rel="icon" type="image/png" href="assets1/img/favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <script disable-devtool-auto src="https://cdn.jsdelivr.net/npm/disable-devtool@latest"></script>
+    <link href="https://media.discordapp.net/attachments/1276363340855377940/1280256229171793961/ICON.gif?ex=66da0e07&is=66d8bc87&hm=cf1fec6a5101378247302d02439f1128c191c6277e57e656c9e9707a93e24ec9&=" rel="icon" type="image/x-icon">
+    <link rel="stylesheet" href="assets1/burger.css">
+    <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.7.0/dist/vanilla-tilt.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            if (window.innerWidth <= 600) {
+                var tosLink = document.querySelector('.navbar-button[href="https://"]');
+                if (tosLink) {
+                    tosLink.textContent = 'ToS';
+                }
+            }
+
+            VanillaTilt.init(document.querySelectorAll('.video-box'), {
+                max: 10,
+                speed: 400
+            });
+        });
+    </script>
+    <style>
+        @font-face {
+            font-family: 'MC';
+            src: url('assets1/fonts/MC.ttf') format('opentype');
+        }
+        .username-input-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #00000000;
+            border-radius: 15px;
+            padding: 8px 15px;
+            font-size: 25px;
+            border: 1px solid #ddd;
+            width: 300px;
+            margin: 20px auto;
+            margin-top: -750px;
+        }
+
+        .username-input-container input {
+            border: none;
+            outline: none;
+            flex-grow: 1;
+            font-size: 15px;
+            padding: 5px;
+            margin-left: 8px;
+            color: #ffffff;
+            background-color: #00000000;
+            border-radius: 10px;
+        }
+
+   
+        .exil p {
+            font-size: 30px;
+        }
+
+
+        .navbar-button {
+            font-size: 20px;
+            padding: 5px 8px; 
+            border-radius: 10px;
+            text-decoration: none;
+            color: #fff; 
+            background-color: transparent; 
+        }
+
+        .navbar-button:hover {
+            background-color: rgba(255, 255, 255, 0.1); 
+        }
+
+
+        .navbar {
+            display: flex;
+            justify-content: space-between; 
+            align-items: center;
+            width: 40%;
+            padding: 20px 20px; 
+        }
+
+        .navbar-right {
+            display: flex;
+            gap: 5px; 
+            justify-content: flex-end; 
+            align-items: center;
+        }
+
+        .logo img {
+            width: 100px; 
+            margin-right: 0; 
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="particles-js"></div>
+    <div class="navbar">
+        <div class="logo">
+            <img class="spin-logo" src="assets1/img/stole.png" alt="Logo">
+        </div>
+        <div class="navbar-right">
+            <a class="navbar-button" href="https://discord.gg/asked">Discord</a>
+            <a class="navbar-button" href="https://t.me/burgerboy274">Contact</a>
+        </div>
+    </div>
+
+    <script src="assets1/js/titles.js"></script>
+    <script src="assets1/js/control.js"></script>
+
+    <div class="exil">
+    </div>
+
+    <footer style="position: fixed; bottom: 0; width: 100%;" class="footer-container">
+        <div style="display: flex; justify-content: space-between; color: var(--footer-color); animation: enter 1s ease;">
+        </div>
+    </footer>    
+
+    <div class="line"></div>
+    <div class="info-box">
+        <div class="song-info">
+            <span class="song-title"></span>
+        </div>
+        <div class="player-controls">
+            <div class="music-slider">
+                <div class="slider-progress"></div>
+            </div>
+            <div class="control-buttons">
+                <div class="backward-button">
+                     <img src="assets1/img/next.png" alt="Backward" draggable="false">
+                </div>
+                <div class="current-time">0:00</div>
+                <div class="pause-button">
+                    <img src="assets1/img/pause.png" alt="Pause" class="pause-icon" draggable="false">
+                    <img src="assets1/img/play.png" alt="Play" class="play-icon" style="display: none;" draggable="false">
+                </div>
+                <div class="forward-button">
+                    <img src="assets1/img/back.png" alt="Forward" draggable="false">
+                </div>
+                <div class="total-duration"></div>
+            </div>
+        </div>
+    </div>
+    <audio id="audio"></audio>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            particlesJS("particles-js", {
+                "particles": {
+                    "number": {
+                        "value": 355,
+                        "density": {
+                            "enable": true,
+                            "value_area": 789.14764163227279
+                        }
+                    },
+                    "color": {
+                        "value": "#ffffff"
+                    },
+                    "shape": {
+                        "type": "circle",
+                        "stroke": {
+                            "width": 0,
+                            "color": "#000000"
+                        },
+                        "polygon": {
+                            "nb_sides": 5
+                        },
+                        "image": {
+                            "src": "img/github.svg",
+                            "width": 100,
+                            "height": 100
+                        }
+                    },
+                    "opacity": {
+                        "value": 0.79927153781200905,
+                        "random": false,
+                        "anim": {
+                            "enable": true,
+                            "speed": 0.2,
+                            "opacity_min": 0,
+                            "sync": false
+                        }
+                    },
+                    "size": {
+                        "value": 2,
+                        "random": true,
+                        "anim": {
+                            "enable": true,
+                            "speed": 2.6,
+                            "size_min": 0,
+                            "sync": false
+                        }
+                    },
+                    "line_linked": {
+                        "enable": false,
+                        "distance": 150,
+                        "color": "#ffffff",
+                        "opacity": 0.4,
+                        "width": 1
+                    },
+                    "move": {
+                        "enable": true,
+                        "speed": 0.3,
+                        "direction": "none",
+                        "random": true,
+                        "straight": false,
+                        "out_mode": "out",
+                        "bounce": false,
+                        "attract": {
+                            "enable": false,
+                            "rotateX": 600,
+                            "rotateY": 1200
+                        }
+                    }
+                },
+                "interactivity": {
+                    "detect_on": "canvas",
+                    "events": {
+                        "onhover": {
+                            "enable": true,
+                            "mode": "bubble"
+                        },
+                        "onclick": {
+                            "enable": true,
+                            "mode": "push"
+                        },
+                        "resize": true
+                    },
+                    "modes": {
+                        "grab": {
+                            "distance": 400,
+                            "line_linked": {
+                                "opacity": 1
+                            }
+                        },
+                        "bubble": {
+                            "distance": 83.91608391608392,
+                            "size": 1,
+                            "duration": 3,
+                            "opacity": 1,
+                            "speed": 3
+                        },
+                        "repulse": {
+                            "distance": 200,
+                            "duration": 0.4
+                        },
+                        "push": {
+                            "particles_nb": 4
+                        },
+                        "remove": {
+                            "particles_nb": 2
+                        }
+                    }
+                },
+                "retina_detect": true
+            });
+        });
+    </script>
+</body>
+</html>
